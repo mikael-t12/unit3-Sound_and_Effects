@@ -28,10 +28,12 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // If the spacebar is pressed down and player is on the ground, jump;
+        // If the spacebar is pressed down and player is on the ground, jump, and if the game is not over
         if ((Input.GetKeyDown(KeyCode.Space) && isOnGround) && playerControllerScript.gameOver == false)
         {
+            //Add force to the player
             playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            //Player is not grounded anymore
             isOnGround = false;
         }
     }
