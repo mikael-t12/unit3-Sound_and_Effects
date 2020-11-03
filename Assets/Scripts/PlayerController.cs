@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody playerRb;
 
+    public bool gameOver;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +36,16 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        isOnGround = true;
+        //If the player collides with the ground, make the isOnGround variable true
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isOnGround = true;
+        }
+        //Change the gameOver variable to true if the player collides with the obstacle
+        else if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            gameOver = true;
+            Debug.Log("Game over!!!");
+        }
     }
 }
