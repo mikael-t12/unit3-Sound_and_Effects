@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private PlayerController playerControllerScript;
 
     private Animator playerAnimation;
 
@@ -22,7 +21,6 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerControllerScript = GameObject.Find("Player").GetComponent<PlayerController>();
         //Get player rigidbody component
         playerRb = GetComponent<Rigidbody>();
         //Add gravity
@@ -35,7 +33,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         // If the spacebar is pressed down and player is on the ground, jump, and if the game is not over
-        if ((Input.GetKeyDown(KeyCode.Space) && isOnGround) && playerControllerScript.gameOver == false)
+        if ((Input.GetKeyDown(KeyCode.Space) && isOnGround) && gameOver == false)
         {
             //Add force to the player
             playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
