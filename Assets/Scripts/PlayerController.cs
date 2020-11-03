@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour
         Physics.gravity *= gravityModifier;
 
         playerAnimation = GetComponent<Animator>();
+
+        dirtParticle.Stop();
     }
 
     // Update is called once per frame
@@ -59,6 +61,9 @@ public class PlayerController : MonoBehaviour
          {
             //Add explosion particle when the player collides with the obstacle
             explosionParticle.Play();
+
+            //Stop playing the dirtParticle
+            dirtParticle.Stop();
 
             //End the game.
             gameOver = true;
