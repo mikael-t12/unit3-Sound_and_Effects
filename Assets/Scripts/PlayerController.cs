@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -58,6 +59,10 @@ public class PlayerController : MonoBehaviour
         {
             gameOver = true;
             Debug.Log("Game over!!!");
+
+            //Death animation
+            playerAnimation.SetBool("Death_b", true);
+            playerAnimation.SetInteger("DeathType_int", 1);
         }
     }
 }
