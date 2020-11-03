@@ -5,17 +5,15 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
+    private Rigidbody playerRb;
     private Animator playerAnimation;
+    public ParticleSystem explosionParticle;
 
     //Variables for jump force and gravity modifier
     public float jumpForce = 100;
     public float gravityModifier;
 
     public bool isOnGround = true;
-
-    private Rigidbody playerRb;
-
     public bool gameOver = false;
 
     // Start is called before the first frame update
@@ -54,7 +52,8 @@ public class PlayerController : MonoBehaviour
         }
         //Change the gameOver variable to true if the player collides with the obstacle
         else if (collision.gameObject.CompareTag("Obstacle"))
-        {
+         {
+            explosionParticle.Play();
             gameOver = true;
             Debug.Log("Game over!!!");
 
