@@ -211,25 +211,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &260467467 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9018102154046460720, guid: deebddff2d031494b89c19fb06056371,
-    type: 3}
-  m_PrefabInstance: {fileID: 9018102154306107451}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &260467468
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 260467467}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5b19c2a6e09cc24abfa65e30e4356fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 30
 --- !u!1 &534669902
 GameObject:
   m_ObjectHideFlags: 0
@@ -649,7 +630,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0925713861c7304aa88d3f997f9384b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstaclePrefab: {fileID: 0}
+  obstaclePrefab: {fileID: 9018102154046460720, guid: deebddff2d031494b89c19fb06056371,
+    type: 3}
 --- !u!1001 &9018102154306107451
 PrefabInstance:
   m_ObjectHideFlags: 0
