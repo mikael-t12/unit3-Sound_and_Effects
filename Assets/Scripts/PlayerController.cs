@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody playerRb;
     private Animator playerAnimation;
     public ParticleSystem explosionParticle;
+    public ParticleSystem dirtParticle;
 
     //Variables for jump force and gravity modifier
     public float jumpForce = 100;
@@ -49,11 +50,17 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isOnGround = true;
+
+            //Add dirt when the player collides with the ground
+            dirtParticle.Play();
         }
         //Change the gameOver variable to true if the player collides with the obstacle
         else if (collision.gameObject.CompareTag("Obstacle"))
          {
+            //Add explosion particle when the player collides with the obstacle
             explosionParticle.Play();
+
+            //End the game.
             gameOver = true;
             Debug.Log("Game over!!!");
 
