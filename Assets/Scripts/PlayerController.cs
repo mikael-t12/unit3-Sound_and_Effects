@@ -5,6 +5,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private PlayerController playerControllerScript;
+
+    private Animator playerAnimation;
+
     //Variables for jump force and gravity modifier
     public float jumpForce = 100;
     public float gravityModifier;
@@ -23,6 +26,8 @@ public class PlayerController : MonoBehaviour
         playerRb = GetComponent<Rigidbody>();
         //Add gravity
         Physics.gravity *= gravityModifier;
+
+        playerAnimation = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -35,6 +40,9 @@ public class PlayerController : MonoBehaviour
             playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             //Player is not grounded anymore
             isOnGround = false;
+
+            //Play the jump animation
+            playerAnimation.SetTrigger("Jump_trig");
         }
     }
 
